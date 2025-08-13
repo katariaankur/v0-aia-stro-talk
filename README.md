@@ -1,30 +1,13 @@
-# AIAstroTalk
+# AstroTalk (End-to-end demo)
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+## Run
+```bash
+npm install
+echo "OPENAI_API_KEY=sk-xxxxx" > .env.local
+npm run dev
+```
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ankurkataria-5197s-projects/v0-aia-stro-talk)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/4ZkA8fEwohw)
-
-## Overview
-
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
-
-## Deployment
-
-Your project is live at:
-
-**[https://vercel.com/ankurkataria-5197s-projects/v0-aia-stro-talk](https://vercel.com/ankurkataria-5197s-projects/v0-aia-stro-talk)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/projects/4ZkA8fEwohw](https://v0.app/chat/projects/4ZkA8fEwohw)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Routes
+- `/login` mock OTP (9999) → grants 6 credits
+- `/pricing` mock card 999999999999999, CVV 123, OTP 9999 → adds credits
+- `/live` realtime voice avatar + camera, Lo Shu, Tarot, Kundli

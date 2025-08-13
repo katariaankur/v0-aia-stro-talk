@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#fff; --fg:#1b2330; --muted:#6b7280; --line:#e5e7eb;
+  --brand:#7C5CFF; --accent:#59D9FF; --soft:#F1EEFF;
+}
+
+/* custom utilities live here so Tailwind can see them */
+@layer components {
+  .section{ @apply mx-auto max-w-6xl px-4; }
+  .card{ @apply rounded-2xl border border-[color:var(--line)] bg-white shadow-sm; }
+  .btn{ @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-medium transition active:scale-[0.98]; }
+  .btn-primary{ @apply bg-[color:var(--brand)] text-white hover:bg-[#6b4df0]; }
+  .btn-soft{ @apply bg-[color:var(--soft)] text-[#5E39FF] hover:bg-[#e8e3ff]; }
+  .btn-outline{ @apply border border-[color:var(--line)] hover:bg-gray-50; }
+
+  /* CHANGE is here: split ring color & opacity */
+  .input{
+    @apply w-full rounded-xl border border-[color:var(--line)] bg-white text-[color:var(--fg)]
+           px-3 py-2 focus:outline-none focus:ring-2
+           focus:ring-[color:var(--brand)] focus:ring-opacity-40
+           placeholder-[color:var(--muted)];
+  }
+
+  .badge{ @apply inline-flex px-2 py-1 text-xs rounded-lg bg-[#EEF2FF] text-[#4338CA]; }
+  .pill{ @apply inline-flex items-center gap-2 rounded-xl px-3 py-2 bg-gray-50 border border-[color:var(--line)]; }
+  .hr{ @apply border-t border-[color:var(--line)]; }
+}
+
+html,body{height:100%; background:var(--bg); color:var(--fg);}
+.gradient-hero{ background: linear-gradient(90deg,#9B7BFF,#7C5CFF 55%,#5E39FF); }
+canvas.overlay { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+.video-wrap { position:relative; width:100%; }
+.dark :root{ --bg:#0b1220; --fg:#e5e7eb; --line:#1f2937; --soft:#221a49; }
+
+/* Ensure the camera area always has height, even without Tailwind's aspect-video */
+.video-wrap {
+  aspect-ratio: 16 / 9;
+}
+
+/* Fix dark-mode variable overrides */
+.dark{
+  --bg:#0b1220;
+  --fg:#e5e7eb;
+  --line:#1f2937;
+  --soft:#221a49;
+}
+
+/* Optional: if you ever switch the canvas class back to "overlay", keep this */
+canvas.overlay{
+  position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;
+}
+
+
+
+/* Ensure camera area has height and dark vars apply to the element with .dark */
+.video-wrap{ aspect-ratio: 16/9; }
+.dark{
+  --bg:#0b1220;
+  --fg:#e5e7eb;
+  --line:#1f2937;
+  --soft:#221a49;
+}
